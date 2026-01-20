@@ -1,124 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Theo Avi Bot ✈️</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f4f8;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .card {
-      max-width: 420px;
-      width: 100%;
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      margin: 0;
-      color: #1a73e8;
-      font-size: 24px;
-    }
-
-    .creator {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    label {
-      font-weight: bold;
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-
-    button {
-      width: 100%;
-      padding: 14px;
-      background: #1a73e8;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #155cc0;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 20px;
-    }
-
-    li {
-      background: #f1f3f6;
-      padding: 10px 14px;
-      border-radius: 8px;
-      margin-bottom: 8px;
-      font-family: monospace;
-    }
-  </style>
+  <title>Theo Avi Bot</title>
 </head>
+<body style="font-family: Arial; text-align: center; padding: 40px;">
 
-<body>
-  <div class="card">
-    <h1>Theo Avi Bot ✈️</h1>
-    <div class="creator">Created by Theo Delton · 74815718</div>
+  <h1>✈️ Theo Avi Bot</h1>
+  <p>Pink Crush Time Predictor</p>
 
-    <label>Enter Pink Crush Time (24h)</label>
-    <input type="time" id="timeInput">
+  <label>Enter Time:</label><br><br>
+  <input type="time"><br><br>
 
-    <button onclick="calculate()">Calculate Predictions</button>
+  <button>Predict</button>
 
-    <ul id="results"></ul>
-  </div>
+  <p style="margin-top:40px;">
+    Created by Theo Delton
+  </p>
 
-  <script>
-    function calculate() {
-      const input = document.getElementById("timeInput").value;
-      const list = document.getElementById("results");
-      list.innerHTML = "";
-
-      if (!input) {
-        alert("Please enter time");
-        return;
-      }
-
-      const adds = [9, 15, 18, 22, 25, 30];
-      const [h, m] = input.split(":").map(Number);
-
-      adds.forEach(min => {
-        let total = h * 60 + m + min;
-        let nh = Math.floor(total / 60) % 24;
-        let nm = total % 60;
-
-        const li = document.createElement("li");
-        li.textContent = `${String(nh).padStart(2,"0")}:${String(nm).padStart(2,"0")} (+${min} min)`;
-        list.appendChild(li);
-      });
-    }
-  </script>
 </body>
 </html>
